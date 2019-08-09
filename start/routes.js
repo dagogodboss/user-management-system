@@ -17,3 +17,8 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+Route.post('login', '/Api/Authentication/LoginController.login').middleware('guest')
+Route.post('register', '/Api/Authentication/RegisterController.register').middleware('guest')
+Route.post('api/user', '/Api/Authentication/LoginController.getAuthUser').middleware('auth')
+
+// Route.get('users/:id', 'UserController.show').middleware('auth')
